@@ -1,7 +1,11 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaLibSql } from "@prisma/adapter-libsql";
 import bcrypt from "bcryptjs";
+import path from "path";
 
-const prisma = new PrismaClient();
+const dbPath = path.join(process.cwd(), "prisma/dev.db");
+const adapter = new PrismaLibSql({ url: `file:${dbPath}` });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   // Create categories
