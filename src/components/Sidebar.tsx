@@ -18,6 +18,8 @@ import {
   LogIn,
   UserPlus,
   LogOut,
+  Info,
+  Mail,
 } from "lucide-react";
 import { useState } from "react";
 import NotificationBell from "./NotificationBell";
@@ -29,6 +31,8 @@ const navLinks = [
   { href: "/rules", label: "Rules", icon: BookOpen },
   { href: "/teams", label: "Teams", icon: Users },
   { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
+  { href: "/about", label: "About", icon: Info },
+  { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 export default function Sidebar() {
@@ -89,6 +93,16 @@ export default function Sidebar() {
 
       {/* Bottom section */}
       <div className="p-3 border-t border-gray-200">
+        {/* Legal footer links */}
+        <div className="flex items-center gap-2 px-3 pb-2 flex-wrap">
+          <Link href="/privacy" onClick={() => setMobileOpen(false)} className="text-xs text-gray-400 hover:text-[#00979D] transition-colors">
+            Privacy
+          </Link>
+          <span className="text-xs text-gray-300">·</span>
+          <Link href="/cookies" onClick={() => setMobileOpen(false)} className="text-xs text-gray-400 hover:text-[#00979D] transition-colors">
+            Cookies
+          </Link>
+        </div>
         {session?.user ? (
           <div className="space-y-2">
             <div className="flex items-center gap-2 px-3 py-2">
