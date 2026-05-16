@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Github, Send, CheckCircle } from "lucide-react";
+import { Mail, GitBranch, Send, CheckCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -38,7 +38,7 @@ export default function ContactPage() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 hover:border-[#00979D] transition-colors"
         >
-          <Github className="w-4 h-4 text-gray-800" />
+          <GitBranch className="w-4 h-4 text-gray-800" />
           Report a bug on GitHub
         </a>
       </div>
