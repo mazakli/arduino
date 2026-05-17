@@ -5,24 +5,44 @@ import Footer from "@/components/Footer";
 import SessionProvider from "@/components/SessionProvider";
 
 export const metadata: Metadata = {
-  title: { default: "Arduino Forum", template: "%s | Arduino Forum" },
-  description: "The Arduino community forum - get help, share projects, build teams",
-  keywords: ["arduino", "electronics", "microcontroller", "DIY", "maker", "community"],
+  title: { default: "Arduino Forum - Arduino Community", template: "%s | Arduino Forum" },
+  description: "Arduino Forum is a community for Arduino enthusiasts. Get help with projects, share builds, form teams, and collaborate with makers worldwide.",
+  keywords: ["arduino", "electronics", "microcontroller", "DIY", "maker", "community", "forum", "hardware", "programming", "robotics", "IoT"],
+  authors: [{ name: "Arduino Forum Community" }],
+  creator: "Arduino Forum",
+  publisher: "Arduino Forum",
+  metadataBase: new URL("https://www.arduinoforum.com"),
+  alternates: {
+    canonical: "https://www.arduinoforum.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://arduinoforum.com",
+    url: "https://www.arduinoforum.com",
     siteName: "Arduino Forum",
     title: "Arduino Forum - Arduino Community",
-    description:
-      "Join the Arduino community. Get help with your projects, share your builds, and collaborate with makers worldwide.",
+    description: "Join the Arduino community. Get help with your projects, share your builds, and collaborate with makers worldwide.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arduino Forum",
-    description: "The Arduino community forum",
+    site: "@arduinoforum",
+    title: "Arduino Forum - Arduino Community",
+    description: "Join the Arduino community. Get help with your projects, share your builds, and collaborate with makers worldwide.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "",
+  },
 };
 
 export default function RootLayout({
